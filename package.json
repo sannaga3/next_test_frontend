@@ -9,8 +9,16 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "next": "14.0.3",
+    "axios": "^1.6.2",
+    "dayjs": "^1.11.10",
+    "next": "^13.5.6",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "zustand": "^4.4.6"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.31",
+    "tailwindcss": "^3.3.5"
   }
 }
