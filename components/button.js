@@ -4,7 +4,6 @@ const Button = ({
   text,
   type,
   onClick,
-  color,
   width,
   height,
   textSize = "base",
@@ -19,23 +18,22 @@ const Button = ({
   const selectedSize = buttonTextSizes.find((size) => size.key === textSize);
 
   return (
-    <div className="flex justify-center items-center">
-      <button
-        onClick={onClick}
-        type={type}
-        className={buttonStyle}
-        disabled={disabled}
-        style={{
-          backgroundColor: color,
-          width: width,
-          height: height,
-          fontSize: selectedSize.value,
-        }}
-      >
-        {text}
-      </button>
-    </div>
+    <button
+      onClick={onClick}
+      type={type}
+      className={buttonStyle}
+      disabled={disabled}
+      style={{
+        width: width,
+        height: height,
+        fontSize: selectedSize.value,
+      }}
+    >
+      {text}
+    </button>
   );
 };
+
+Button.displayName = "Button";
 
 export default Button;

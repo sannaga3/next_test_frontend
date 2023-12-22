@@ -19,4 +19,6 @@ const FlashMessage = ({ flashMessage }) => {
   );
 };
 
+FlashMessage.displayName = "FlashMessage";
+
 export default FlashMessage;

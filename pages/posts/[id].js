@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Button from "../../components/button";
 import FlashMessage from "../../components/flashMessage";
 import { defaultFlashMessage } from "../../constants";
@@ -111,26 +111,23 @@ const PostDetail = () => {
                 </Link>
               </div>
             </div>
-            <div className="mt-8 col-start-3 col-span-8">
-              <div className="w-20 h-8 flex justify-center items-center bg-red-500 rounded-lg text-white z-0">
-                <Button
-                  type="button"
-                  onClick={handleDelete}
-                  className="outline-none"
-                  useDefaultClass={false}
-                  classProps="z-100"
-                  text="削除"
-                  width={60}
-                  height={30}
-                />
-              </div>
-            </div>
-            <div className="mt-8 col-start-3 col-span-8">
+            <div className="mt-8 col-span-8">
               <div className="w-20 h-8 flex justify-center items-center bg-indigo-500 rounded-lg text-white">
                 <Link href={"/posts"} className="block pt-0.5">
                   ⬅︎ 戻る
                 </Link>
               </div>
+            </div>
+            <div className="mt-8 col-span-8">
+              <Button
+                type="button"
+                onClick={handleDelete}
+                useDefaultClass={false}
+                classProps="w-20 h-8 flex justify-center items-center bg-red-500 rounded-lg text-white"
+                text="削除"
+                width={60}
+                height={30}
+              />
             </div>
           </div>
         </>
