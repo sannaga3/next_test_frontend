@@ -10,7 +10,7 @@ const FlashMessage = ({ flashMessage }) => {
     <>
       {flashMessage.messages.map((message) => {
         return (
-          <div className={`border-2 ${color} p-3 mb-4`}>
+          <div key={message} className={`border-2 ${color} p-3 mb-4`}>
             <p>{message}</p>
           </div>
         );

@@ -50,7 +50,6 @@ const Login = () => {
       });
     }
   };
-  console.log(flashMessage);
 
   return (
     <div className="flex flex-col justify-center py-12 sm:px-6 lg:px-8">
@@ -67,7 +66,7 @@ const Login = () => {
       </div>
       <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
         <div className="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
-          <form onSubmit={handleLogin}>
+          <form onSubmit={handleLogin} data-testid="login-form">
             <div>
               <label
                 htmlFor="email"
