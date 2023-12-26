@@ -28,7 +28,7 @@ const Register = () => {
         query: {
           flashMessage: JSON.stringify({
             type: "success",
-            messages: ["register successful."],
+            messages: ["Register successful."],
           }),
         },
       });
@@ -42,7 +42,7 @@ const Register = () => {
     username.length < 3 &&
       errorArr.push("Username must be at least 3 characters");
     password.length < 6 &&
-      errorArr.push("Username must be at least 6 characters");
+      errorArr.push("Password must be at least 6 characters");
     setFlashMessage({ type: "error", messages: errorArr });
     return errorArr;
   };
@@ -65,7 +65,7 @@ const Register = () => {
       </div>
       <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
         <div className="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit} data-testid="register-form">
             <div>
               <label
                 htmlFor="email"
@@ -122,7 +122,7 @@ const Register = () => {
                 type="submit"
                 className="w-full py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
               >
-                submit
+                Submit
               </button>
             </div>
           </form>
