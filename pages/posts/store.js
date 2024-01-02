@@ -45,15 +45,18 @@ const StorePost = () => {
 
       setPosts([post, ...posts]);
 
-      router.push({
-        pathname: "/posts",
-        query: {
-          flashMessage: JSON.stringify({
-            type: "success",
-            messages: ["store successful."],
-          }),
+      router.push(
+        {
+          pathname: "/posts",
+          query: {
+            flashMessage: JSON.stringify({
+              type: "success",
+              messages: ["store successful."],
+            }),
+          },
         },
-      });
+        "/posts"
+      );
     } catch (e) {
       setFlashMessage({
         type: "error",
@@ -65,7 +68,7 @@ const StorePost = () => {
   return (
     <div className="flex flex-col justify-center py-5 sm:px-6 lg:px-8">
       <Head>
-        <title>Edit Post</title>
+        <title>New Post</title>
       </Head>
       {flashMessage.messages.length > 0 && (
         <FlashMessage flashMessage={flashMessage} />
@@ -83,7 +86,7 @@ const StorePost = () => {
                 htmlFor="title"
                 className="block text-sm font-medium text-gray-700"
               >
-                title
+                Title
               </label>
               <input
                 id="title"
@@ -99,7 +102,7 @@ const StorePost = () => {
                 htmlFor="content"
                 className="block text-sm font-medium text-gray-700"
               >
-                content
+                Content
               </label>
               <input
                 id="content"
@@ -115,7 +118,7 @@ const StorePost = () => {
                 type="submit"
                 className="w-full py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
               >
-                submit
+                Submit
               </button>
             </div>
           </form>

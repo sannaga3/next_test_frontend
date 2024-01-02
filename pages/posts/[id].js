@@ -47,15 +47,18 @@ const PostDetail = () => {
       const newPosts = posts.filter((data) => data.id !== post.id);
       setPosts(newPosts);
 
-      router.push({
-        pathname: "/posts",
-        query: {
-          flashMessage: JSON.stringify({
-            type: "success",
-            messages: ["Delete successful."],
-          }),
+      router.push(
+        {
+          pathname: "/posts",
+          query: {
+            flashMessage: JSON.stringify({
+              type: "success",
+              messages: ["Delete successful."],
+            }),
+          },
         },
-      });
+        "/posts"
+      );
     }
   };
 
@@ -77,7 +80,9 @@ const PostDetail = () => {
           <div className="w-1000px grid grid-cols-12 items-center mt-5">
             <div className={contentDetailStyle}>
               <div className="col-span-4">ID</div>
-              <div className="col-span-8">{post.id}</div>
+              <div className="col-span-8" data-testid="show-post-id">
+                {post.id}
+              </div>
             </div>
             <div className={contentDetailStyle}>
               <div className="col-span-4">username</div>
@@ -105,16 +110,17 @@ const PostDetail = () => {
                     pathname: `/posts/${post.id}/edit`,
                     query: { post: post },
                   }}
+                  as={`/posts/${post.id}/edit`}
                   className="block pt-0.5"
                 >
-                  更新
+                  Edit
                 </Link>
               </div>
             </div>
             <div className="mt-8 col-span-8">
               <div className="w-20 h-8 flex justify-center items-center bg-indigo-500 rounded-lg text-white">
                 <Link href={"/posts"} className="block pt-0.5">
-                  ⬅︎ 戻る
+                  ⬅︎ Back
                 </Link>
               </div>
             </div>
@@ -124,7 +130,7 @@ const PostDetail = () => {
                 onClick={handleDelete}
                 useDefaultClass={false}
                 classProps="w-20 h-8 flex justify-center items-center bg-red-500 rounded-lg text-white"
-                text="削除"
+                text="Delete"
                 width={60}
                 height={30}
               />

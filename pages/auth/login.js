@@ -34,15 +34,18 @@ const Login = () => {
       localStorage.setItem("token", token);
       await setLoginUser(res.data.user);
 
-      router.push({
-        pathname: "/posts",
-        query: {
-          flashMessage: JSON.stringify({
-            type: "success",
-            messages: ["Login successful."],
-          }),
+      router.push(
+        {
+          pathname: "/posts",
+          query: {
+            flashMessage: JSON.stringify({
+              type: "success",
+              messages: ["Login successful."],
+            }),
+          },
         },
-      });
+        "/posts"
+      );
     } catch (e) {
       setFlashMessage({
         type: "error",

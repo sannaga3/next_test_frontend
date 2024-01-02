@@ -52,15 +52,18 @@ const UpdatePost = () => {
       });
       setPosts(newPosts);
 
-      router.push({
-        pathname: `/posts/${target.id}`,
-        query: {
-          flashMessage: JSON.stringify({
-            type: "success",
-            messages: ["update successful."],
-          }),
+      router.push(
+        {
+          pathname: `/posts/${target.id}`,
+          query: {
+            flashMessage: JSON.stringify({
+              type: "success",
+              messages: ["update successful."],
+            }),
+          },
         },
-      });
+        `/posts/${target.id}`
+      );
     } catch (e) {
       setFlashMessage({
         type: "error",
@@ -90,7 +93,7 @@ const UpdatePost = () => {
                 htmlFor="title"
                 className="block text-sm font-medium text-gray-700"
               >
-                title
+                Title
               </label>
               <input
                 id="title"
@@ -107,7 +110,7 @@ const UpdatePost = () => {
                 htmlFor="content"
                 className="block text-sm font-medium text-gray-700"
               >
-                content
+                Content
               </label>
               <input
                 id="content"
@@ -124,14 +127,14 @@ const UpdatePost = () => {
                 type="submit"
                 className="w-full py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
               >
-                submit
+                Submit
               </button>
             </div>
           </form>
           <div className="mt-8 col-start-3 col-span-8">
             <div className="w-20 h-8 flex justify-center items-center bg-indigo-500 rounded-lg text-white">
               <Link href={`/posts/${target.id}`} className="block pt-0.5">
-                ⬅︎ back
+                ⬅︎ Back
               </Link>
             </div>
           </div>

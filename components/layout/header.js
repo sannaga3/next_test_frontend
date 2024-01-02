@@ -63,9 +63,13 @@ const Header = () => {
                   </Link>
                 </li>
                 <div className="inline-block border-b px-2 pb-0.5 text-indigo-800 border-indigo-800 hover:border-indigo-600 hover:text-indigo-600">
-                  <div color="#6366f1" onClick={() => handleLogout()}>
+                  <button
+                    type="button"
+                    color="#6366f1"
+                    onClick={() => handleLogout()}
+                  >
                     Logout
-                  </div>
+                  </button>
                 </div>
               </>
             ) : (

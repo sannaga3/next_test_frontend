@@ -66,7 +66,7 @@ const PostList = () => {
             </div>
             <div className="container mb-10">
               {memoizedPosts.map((post) => (
-                <div key={post.id}>
+                <div key={post.id} data-testid="post-item">
                   <PostItem post={post} userId={loginUser.id} />
                 </div>
               ))}
